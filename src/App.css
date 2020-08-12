@@ -1,38 +1,123 @@
-.App {
-  text-align: center;
+.mymodal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.myoverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ReactModal__Overlay--after-open {
+  opacity: 1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.input-placeholder input {
+  flex: 0 1 8em;
+  border: 0;
+  background-color: #eee;
+  padding-left:1em;
+  
+}
+.input-placeholder input:focus{
+  outline: 0;
+}
+.input-placeholder span:last-child {
+  margin-left: -35px;
+  background-color: #3f51b5;
   color: white;
+  padding:1em;
+  flex: 0 0 auto;
+  border-radius: 0 1em 1em 0;
+}
+.input-placeholder span{
+  display: inline-block;
+  /* margin-top: .5px; */
+  padding: 10px;
+  background-color: #eee;
+  border-radius: 1em 0 0 1em;
+}
+.input-placeholder{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.button-container{
+  display: flex;
+  justify-content:space-around;
+  padding:10px;
+  margin:10px
+}
+.button-container button:focus{
+  outline: 0;
+}
+article {
+  display: grid;
+  grid-template-columns: 
+    [full-start] minmax(1em, 1fr) 
+    [main-start] minmax(0, 70em) [main-end]
+    minmax(1em, 1fr) [full-end];
+    grid-gap: 1em;
+    margin: 1em;
 }
 
-.App-link {
-  color: #61dafb;
+section {
+  grid-column: main;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+article > * {
+  background-color: #eaeaea;
+  padding: 2em;
+}
+
+.leftsection{
+  margin: 0 7em;
+}
+.leftsection input{
+  margin-bottom:  1em;
+  padding:1em;
+  width:100%;
+}
+.inputfield{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.leftsection Button{
+  margin-top:10px;
+  padding:.5em 1em;
+}
+
+/* .editor {
+  margin-right: 10em;
+} */
+
+.ck-editor__editable_inline {
+  min-height: 200px;
+}
+@media (max-width: 530px) {
+  .leftsection{
+    margin: 0 3em;
   }
 }
